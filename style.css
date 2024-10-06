@@ -26,6 +26,9 @@
 .bg-slate-pers {
     background: rgba(34, 40, 47, 1);
 }
+.bg-slate-pers-sec{
+    background: rgba(44, 49, 55, 1);
+}
 
 .sombreado {
     background: linear-gradient(90deg, rgba(29,29,27,1) 15%, rgba(29,29,27,0) 60%);
