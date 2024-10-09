@@ -20,14 +20,14 @@
       <img src="./Logo_G&D.png" alt="">
     </a>
     <div class="flex flex-row gap-9 items-center">
-      <a href="#somos" class="hover:cursor-pointer duration-150 ease-in-out transition hover:scale-105 active:scale-90"> <span
-          class=" font-medium tracking-widest">
+      <a href="#somos" class="hover:cursor-pointer duration-150 ease-in-out transition hover:scale-105 active:scale-90">
+        <span class=" font-medium tracking-widest">
           SOMOS
         </span>
       </a>
-      <a href="#hacemos">
+      <a href="#hacemos" class="hover:cursor-pointer duration-150 ease-in-out transition hover:scale-105 active:scale-90">
         <span
-          class="hover:cursor-pointer duration-150 ease-in-out transition hover:scale-105 active:scale-90 font-medium tracking-widest">
+          class=" font-medium tracking-widest">
           HACEMOS
         </span>
       </a>
@@ -44,10 +44,12 @@
       <p class="text-white font-normal text-6xl leading-tight tracking-widest w-6/12 ">
         Creamos estrategias <br> que transforman <br> <span class="font-semibold ">relaciones en resultados</span>
       </p>
-      <span
-        class="font-normal border-2 bg-zinc-200 border-zinc-200 text-zinc-800 hover:cursor-pointer hover:bg-zinc-800 hover:border-zinc-300 hover:text-zinc-300 transition-all duration-700 rounded-full py-4 px-7 tracking-widest">
-        TRABAJEMOS JUNTOS
-      </span>
+      <a href="#form">
+        <span
+          class="font-normal border-2 bg-zinc-200 border-zinc-200 text-zinc-800 hover:cursor-pointer hover:bg-zinc-800 hover:border-zinc-300 hover:text-zinc-300 transition-all duration-700 rounded-full py-4 px-7 tracking-widest">
+          TRABAJEMOS JUNTOS
+        </span>
+      </a>
     </div>
   </section>
   <section id="somos" class="px-32 py-24 flex flex-col items-center justify-center gap-16">
@@ -107,7 +109,7 @@
     </div>
   </section>
 
-  <section class="bg-slate-pers  px-32 py-24 flex flex-col items-center justify-center gap-16">
+  <section class="bg-slate-pers container-2xl px-32 py-24 flex flex-col items-center justify-center gap-16">
     <div class="flex flex-row justify-between items-center py-10 w-full">
       <div class="flex flex-col justify-center items-start w-full gap-3">
         <p class="font-semibold text-5xl leading-tight text-zinc-100">HACEMOS TODO ESTO</p>
@@ -212,13 +214,15 @@
     </div>
   </section>
 
-  <section id="procesoTrabajo">
+  <section id="procesoTrabajo" class="container-2xl">
     <div class="py-24">
-      <p id="procesoTitulo" class="text-5xl font-bold text-center flex flex-row items-center justify-center gap-6">
+      <p id="procesoTitulo"
+        class="text-5xl font-bold text-center flex flex-row items-center justify-center gap-6 transition-all ease-in-out duration-500">
         PROCESO DE TRABAJO
         <img id="open" class="p-3 bg-zinc-800 hover:cursor-pointer"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAA39JREFUaEO9WcFh2zAMJPujs0RGcTbJJkkniTexN6mXkPgzW8qqRBIAcRDT+tVKEIg74ABI8a74eedcKi+s/5auM6bdS7of77xLawy6dT4sW8m/0gfmb/FFTJcLsrP9juGQglyMSLtvDop6VvcYhpl+Bng+tyBsh9WxH+JDKG+VFd5gDWEkEr7WWIJ6+hwD8M1CR5pKWRi0hA4JFxGogSdDVisAhucM0VhMrRHktvuPf0hIiM0eZm19DEBXv1g4iBUpTOahAoDsstssSjCCixjjewjhAie713KaVaEvYvhEucfHafpyP/zZPdIlvLz8rCyXQGlJ/I0RzRIb5qFm1HjKwSfv31eW7i4xIDSSFBSeIUHSi3ZUdT/GeHbJXZv18BiIZilpyZVH0WAacu27lL4a5IdB0C1R3EYNKupOYu9inBkQ/u7Sg2pCzDGzZhfNgwlB6FfcywKwSnx7JgqgTw0Q5FJvPF5TGAiMOEEDBo0i/Y1xx4Pw95Qel1PbYmm/Fbslc4Nh+mDQ7XY5r8LOWS+GkCLs/pBd3wFLoSiFPQimzcQKZgdh8A9NYoM/uA4xTejuKADlmTjPm+YX5mB0iOHyTeLuDRMbAlAevQPAZkVZ603dM58vNvaWcsrCpnsR3Z30PBUWZQZMD1qNvX8LIdy46ds2hu3/OzY53f8FwBL86cZ/ZquZeJZQtzz7LawznLtL4Rzj2bt0bado8v7tlJnXfnSVAHaCzlaonVfef26q6UoXgLVsYGd+bSJKg9DlinWYXBJc8M9uBgS/HGMWcbkXwdSwhl3mT+GWgyMfdwFysdoZi51l/qm/knnKrqaxag4gXUgXPUUqvJ01wQsMkbIxl5BEPVL3rmK+GmSZ+aVsxlLbn8QKei0bW82XWJcTAcGK3b3JQOvbTIiQiDjHV+fSr/FWSTNE+NDGNQ2CvsZxOOI0fSTvP7c0C60S1h5TbUUJDeeCb53T9PFn2nzW3UYZ/oa+SDWAabOrvNZFjPE1hHA3PQRqW1zn9elrpMn6vVAUY6eNkiKyZgO2tw4subzFNko6KKPkfexj+ebxGcAwDvpzoIwLrqkRMJi427CE5sR8iDcPCQyMNhBlL0f/xATXen00eczqh6nrqoSs/iTmYD+rIaKN3kaG5RmOSmFdKVjkmLYnYQAMS6keRP0VcGQHKAaZ1M6YPI+kXkdnIvQ3Z6DSRF1C7F4AAAAASUVORK5CYII=" />
-      <div id="procesoTrabajoCarrusel" class=" px-32 hidden flex-col items-center justify-center gap-16">
+      <div id="procesoTrabajoCarrusel"
+        class=" px-32 hidden flex-col items-center justify-center gap-16 container-2xl transition-transform ease-in-out duration-500">
         <div class="flex flex-row justify-between items-center py-10 w-full">
           <div class="flex flex-col justify-center items-start w-full gap-3">
             <p class="font-semibold text-5xl leading-tight text-zinc-800">LO PENSAMOS. LO HACEMOS.</p>
@@ -228,9 +232,9 @@
               style='color:#EAEDF7'></i>
           </div>
         </div>
-        <div class="carousel-container relative w-full flex flex-col justify-center items-center gap-6">
+        <div class="carousel-container relative flex flex-col justify-center items-center gap-6 container-xl">
           <div
-            class="carousel2 relative w-full h-full flex flex-row justify-between items-center gap-5 transition-transform ease-in-out duration-500">
+            class="carousel2 relative h-full flex flex-row justify-between items-center transition-all ease-in-out duration-500 gap-4-5">
             <div class="card2 relative border-2 border-zinc-800 " data-index="0">
               <div class="flex flex-col justify-start items-start h-full p-12 gap-10">
                 <p class="py-4 px-5 bg-zinc-800 text-zinc-100 w-1/4 font-bold text-5xl text-center">1.</p>
@@ -330,20 +334,20 @@
       <form id="form" action="">
         <div class="pb-4">
           <p class="pb-4 text-3xl font-normal text-zinc-100">¿En qué te ayudamos?</p>
-          <input id="texto" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100" type="text"
-            required placeholder="Contanos qué necesitás">
+          <input id="texto" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100 focus:outline-none"
+            type="text" required placeholder="Contanos qué necesitás">
         </div>
         <div class="">
           <p class="pb-4 text-3xl font-normal text-zinc-100">¿Cómo te contactamos?</p>
           <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
-            <input id="nombre" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100"
+            <input id="nombre" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100 focus:outline-none"
               type="text" required placeholder="Nombre completo">
-            <input id="email" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100"
+            <input id="email" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100 focus:outline-none"
               type="mail" required placeholder="Email">
-            <input id="empresa" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100"
+            <input id="empresa" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100 focus:outline-none"
               type="text" required placeholder="Empresa">
-            <input id="telefono" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100"
-              type="text" required placeholder="Teléfono">
+            <input id="telefono" class="bg-slate-pers-sec p-5 w-full text-xl border-b-2 border-zinc-500 text-zinc-100 focus:outline-none"
+              type="number" required placeholder="Teléfono">
             <div class="col-span-2 w-full mt-8">
               <div class="flex flex-row items-center">
                 <div class="g-recaptcha w-1/2" data-sitekey="6LfmjFsqAAAAAM-Rrq0gg3Y9bs6WU4iQNIweE15R"></div>
