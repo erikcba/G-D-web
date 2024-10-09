@@ -7,14 +7,17 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Outfit", sans-serif;
+    scroll-behavior: smooth;
+    scroll-margin-top: 75px;
 }
 
 #hero {
     height: 55vh;
+    margin-top: 106px;
 }
 
 .hero {
-    background-image: url('./hero-img.png');
+    background-image: url('/hero_img.png');
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
@@ -24,15 +27,43 @@
 }
 
 .bg-slate-pers {
-    background: rgba(34, 40, 47, 1);
+    background: #22282f;
 }
-.bg-slate-pers-sec{
+
+.bg-slate-pers-sec {
     background: rgba(44, 49, 55, 1);
 }
 
 .sombreado {
-    background: linear-gradient(90deg, rgba(29,29,27,1) 15%, rgba(29,29,27,0) 60%);
+    background: linear-gradient(90deg, rgba(29, 29, 27, 1) 15%, rgba(29, 29, 27, 0) 60%);
     z-index: 10;
     height: 100%;
     width: 100%;
+}
+
+.carousel-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    scroll-snap-type: x mandatory;
+}
+
+.card1 , .card2{
+    height: 456px;
+    flex: 0 0 23%;
+    box-sizing: border-box;
+    margin: 0;
+    scroll-snap-align: start;
+}
+
+.card1:hover .title {
+    transform: translateY(-160px);
+    color: rgba(34, 40, 47, 1);
+}
+
+
+.card1:hover .description {
+    display: block;
+    transform: translateY(0);
 }
