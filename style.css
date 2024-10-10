@@ -13,7 +13,6 @@
 
 #hero {
     height: 55vh;
-    margin-top: 106px;
 }
 
 .hero {
@@ -22,7 +21,7 @@
     background-position: right;
     background-repeat: no-repeat;
     height: 100%;
-    width: 100%;
+    width: auto;
     z-index: 1;
 }
 
@@ -55,10 +54,10 @@
 .card1,
 .card2 {
     height: 456px;
-    flex: 0 0 23%;
     box-sizing: border-box;
     margin: 0;
     scroll-snap-align: start;
+    flex-shrink: 0;
 }
 
 .card1:hover .title {
@@ -68,7 +67,8 @@
 
 
 .card1:hover .description {
-    display: block;
+    display: flex;
+    flex-direction: column;
     transform: translateY(0);
 }
 

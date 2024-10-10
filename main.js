@@ -11,8 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let visibleCards1 = 4;
 
     function updateCarousel1() {
-        const cardWidth = carousel1.offsetWidth / visibleCards1;
-        carousel1.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        const card = document.querySelector('.card1')
+        const cardWidth = card.offsetWidth;  // Ancho de la tarjeta
+        const gap = parseFloat(getComputedStyle(carousel1).gap) || 0;
+        const totalCardWidth = cardWidth + gap;
+
+        carousel1.style.transform = `translateX(-${currentIndex * totalCardWidth}px)`
     }
 
     function moveNext() {
@@ -35,19 +39,36 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateVisibleCards1() {
         if (window.innerWidth < 768) {
             visibleCards1 = 1;
-        } else if (window.innerWidth < 1024) {
-            visibleCards1 = 2;
-        } else if (window.innerWidth < 1280) {
-            visibleCards1 = 3;
-
-        } else if (window.innerWidth < 1920) {
-            cards2.forEach(card => {
-                card.style.flex = `0 0 25%`;
+            cards1.forEach(card => {
+                card.style.flex = `0 0 98%`;
             })
-            visibleCards2 = 4;
+
             updateCarousel1();
-        } else {
+        } else if (window.innerWidth < 1030) {
+            visibleCards1 = 2;
+            cards1.forEach(card => {
+                card.style.flex = `0 0 48%`;
+            })
+            updateCarousel1();
+        } else if (window.innerWidth < 1445) {
+            visibleCards1 = 3;
+            cards1.forEach(card => {
+                card.style.flex = `0 0 32%`;
+            })
+            updateCarousel1();
+        } else if (window.innerWidth < 1925) {
+            cards1.forEach(card => {
+                card.style.flex = `0 0 23.5%`;
+            })
             visibleCards1 = 4;
+            updateCarousel1();
+        } else if (window.innerWidth > 1925) {
+            visibleCards1 = 4;
+            cards1.forEach(card => {
+                card.style.flex = `0 0 24.2%`;
+            })
+            visibleCards1 = 4;
+            updateCarousel1();
         }
         updateCarousel1();
     }
@@ -70,8 +91,12 @@ document.addEventListener('DOMContentLoaded', function () {
     let visibleCards2 = 4;
 
     function updateCarousel2() {
-        const cardWidth = carousel2.offsetWidth / visibleCards2;
-        carousel2.style.transform = `translateX(-${currentIndex2 * cardWidth}px)`;
+        const card = document.querySelector('.card2')
+        const cardWidth = card.offsetWidth;
+        const gap = parseFloat(getComputedStyle(carousel2).gap) || 0;
+        const totalCardWidth = cardWidth + gap;
+
+        carousel2.style.transform = `translateX(-${currentIndex2 * totalCardWidth}px)`
     }
 
     function moveNext2() {
@@ -87,24 +112,38 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButton2.addEventListener('click', moveNext2);
     prevButton2.addEventListener('click', movePrev2);
 
-    cards2.forEach(card => {
-        card.style.flex = `0 0 24%`;
-    });
-
     function updateVisibleCards2() {
         if (window.innerWidth < 768) {
             visibleCards2 = 1;
-        } else if (window.innerWidth < 1024) {
-            visibleCards2 = 2;
-        } else if (window.innerWidth < 1280) {
-            visibleCards2 = 3;
-        } else if (window.innerWidth < 1920) {
             cards2.forEach(card => {
-                card.style.flex = `0 0 25%`;
+                card.style.flex = `0 0 98%`;
+            })
+            updateCarousel2();
+        } else if (window.innerWidth < 1030) {
+            visibleCards2 = 2;
+            cards2.forEach(card => {
+                card.style.flex = `0 0 48%`;
+            })
+            updateCarousel2();
+        } else if (window.innerWidth < 1445) {
+            visibleCards2 = 3;
+            cards2.forEach(card => {
+                card.style.flex = `0 0 32%`;
+            })
+            updateCarousel2();
+        } else if (window.innerWidth < 1925) {
+            cards2.forEach(card => {
+                card.style.flex = `0 0 23.5%`;
             })
             visibleCards2 = 4;
-        } else {
+            updateCarousel1();
+        } else if (window.innerWidth > 1925) {
             visibleCards2 = 4;
+            cards2.forEach(card => {
+                card.style.flex = `0 0 24.3%`;
+            })
+            visibleCards2 = 4;
+            updateCarousel2();
         }
         updateCarousel2();
     }
@@ -160,7 +199,8 @@ submitBtn.addEventListener('click', (e) => {
         Swal.fire({
             title: 'Error',
             text: 'Por favor, completa el captcha.',
-            icon: 'error'
+            icon: 'error',
+            confirmButtonColor: '#22282f'
         });
         return;
     }
