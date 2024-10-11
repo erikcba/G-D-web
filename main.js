@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalCards2 = cards2.length;
     let visibleCards2 = 4;
 
+    window.addEventListener('load', () => {
+        updateVisibleCards2();  // Ejecutar solo después de que todo esté cargado
+    });
+
     function updateCarousel2() {
         const card = document.querySelector('.card2')
         const cardWidth = card.offsetWidth;
@@ -133,11 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCarousel2();
         } else if (window.innerWidth < 1925) {
             cards2.forEach(card => {
-                card.style.flex = `0 0 23.5%`;
+                card.style.flex = `0 0 24%`;
             })
             visibleCards2 = 4;
-            updateCarousel1();
-        } else if (window.innerWidth > 1925) {
+            updateCarousel2();
+        } else {
             visibleCards2 = 4;
             cards2.forEach(card => {
                 card.style.flex = `0 0 24.3%`;
