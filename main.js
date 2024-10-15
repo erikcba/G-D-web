@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalCards1 = cards1.length;
     let visibleCards1 = 4;
 
+    window.addEventListener('load', () => {
+        updateVisibleCards1();
+    });
+
     function updateCarousel1() {
         const card = document.querySelector('.card1')
         const cardWidth = card.offsetWidth;  // Ancho de la tarjeta
@@ -91,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let visibleCards2 = 4;
 
     window.addEventListener('load', () => {
-        updateVisibleCards2();  // Ejecutar solo después de que todo esté cargado
+        updateVisibleCards2();
     });
 
     function updateCarousel2() {
