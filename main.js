@@ -234,7 +234,7 @@ submitBtn.addEventListener('click', (e) => {
             telefono: telefonoValue,
         };
 
-        fetch('https://formspree.io/f/mbjbgprn', {
+        fetch('https://formsubmit.co/eriktomaselli97@gmail.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
