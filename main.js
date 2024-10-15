@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (window.innerWidth < 768) {
             visibleCards1 = 1;
             cards1.forEach(card => {
-                card.style.flex = `0 0 98%`;
+                card.style.flex = `0 0 97%`;
             })
 
             updateCarousel1();
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             updateCarousel1();
         } else if (window.innerWidth < 1925) {
             cards1.forEach(card => {
-                card.style.flex = `0 0 23.5%`;
+                card.style.flex = `0 0 24%`;
             })
             visibleCards1 = 4;
             updateCarousel1();
@@ -234,7 +234,7 @@ submitBtn.addEventListener('click', (e) => {
             telefono: telefonoValue,
         };
 
-        fetch('https://formsubmit.co/eriktomaselli97@gmail.com', {
+        fetch('https://formspree.io/f/mbjbgprn', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
