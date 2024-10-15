@@ -72,6 +72,10 @@
     transform: translateY(0);
 }
 
+.card1:hover .bxs-hand-up {
+    display: none;
+}
+
 #procesoTrabajoCarrusel {
     opacity: 1;
     transition: opacity .5s ease-in-out;
