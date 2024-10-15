@@ -203,6 +203,11 @@ submitBtn.addEventListener('click', (e) => {
     let textoValue = texto.value.trim();
     const captchaResponse = grecaptcha.getResponse();
 
+    function validate_email(email) {
+        const filtermail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        return filtermail.test(email)
+    }
+
     if (!captchaResponse.length > 0) {
         Swal.fire({
             title: 'Error',
@@ -213,7 +218,7 @@ submitBtn.addEventListener('click', (e) => {
         return;
     }
 
-    if (nombreValue === '' || empresaValue === '' || emailValue === '' || telefonoValue === '' || textoValue === '') {
+    if (nombreValue === '' || empresaValue === '' || emailValue === '' || telefonoValue === '' || textoValue === '' || !validate_email(emailValue)) {
         Swal.fire({
             title: 'Error',
             text: 'Por favor, complete todos los campos del formulario.',
