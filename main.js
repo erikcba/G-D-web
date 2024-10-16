@@ -201,11 +201,11 @@ submitBtn.addEventListener('click', (e) => {
     let emailValue = email.value.trim();
     let telefonoValue = telefono.value.trim();
     let textoValue = texto.value.trim();
-    const captchaResponse = grecaptcha.getResponse();
+    const captchaResponse = grecaptcha.getResponse()
 
     function validate_email(email) {
         const filtermail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-        return filtermail.test(email)
+        return filtermail.test(email);
     }
 
     if (!captchaResponse.length > 0) {
@@ -226,39 +226,36 @@ submitBtn.addEventListener('click', (e) => {
             confirmButtonColor: '#22282f'
         });
     } else {
-        const formData = {
-            nombre: nombreValue,
-            empresa: empresaValue,
-            texto: textoValue,
-            email: emailValue,
-            telefono: telefonoValue,
-        };
+        // Crear el FormData
+        const formData = new FormData();
+        formData.append('nombre', nombreValue);
+        formData.append('empresa', empresaValue);
+        formData.append('email', emailValue);
+        formData.append('telefono', telefonoValue);
+        formData.append('texto', textoValue);
 
-        fetch('https://formspree.io/f/mbjbgprn', {
+        fetch('https://gydconsultoras.com/sendmail.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
+            body: formData
         })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Error en la petición');
-                }
-                return response.json();
-            })
+            .then(response => response.json())
             .then(data => {
-                Swal.fire({
-                    title: "Éxito",
-                    text: "El formulario se ha enviado correctamente.",
-                    icon: "success",
-                    confirmButtonColor: '#22282f',
-                });
-                nombre.value = '';
-                empresa.value = '';
-                email.value = '';
-                telefono.value = '';
-                texto.value = '';
+                if (data.success) {
+                    Swal.fire({
+                        title: "Éxito",
+                        text: "El formulario se ha enviado correctamente.",
+                        icon: "success",
+                        confirmButtonColor: '#22282f',
+                    });
+                    document.getElementById('form').reset();
+                } else {
+                    Swal.fire({
+                        title: 'Error',
+                        text: data.message || 'Ocurrió un error al enviar el formulario.',
+                        icon: 'error',
+                        confirmButtonColor: '#22282f',
+                    });
+                }
             })
             .catch((error) => {
                 Swal.fire({
