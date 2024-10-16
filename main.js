@@ -247,7 +247,8 @@ submitBtn.addEventListener('click', (e) => {
                         icon: "success",
                         confirmButtonColor: '#22282f',
                     });
-                    document.getElementById('form').reset();
+                    document.getElementById('form').reset()
+                    grecaptcha.reset()
                 } else {
                     Swal.fire({
                         title: 'Error',
