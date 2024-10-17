@@ -99,3 +99,13 @@
         line-height: 1.4em !important;
     }
 }
+
+@media screen and (max-width: 400px) {
+    .card1 {
+        height: 380px;
+    }
+    .card1:hover .title {
+        transform: translateY(-150px);
+        color: rgba(34, 40, 47, 1);
+    }
+}
