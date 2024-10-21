@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($nombre) && !empty($empresa) && !empty($email) && !empty($telefono) && !empty($texto)) {
         
         // Configura los detalles del correo
-        $to = "eriktomaselli97@gmail.com"; // Reemplaza con tu email
+        $to = "eriktomaselli97@gmail.com";
         $subject = "Nuevo mensaje desde el formulario de contacto";
         
         $message = "
