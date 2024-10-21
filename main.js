@@ -200,6 +200,7 @@ submitBtn.addEventListener('click', (e) => {
     let empresaValue = empresa.value.trim();
     let emailValue = email.value.trim();
     let telefonoValue = telefono.value.trim();
+    let textoValue = texto.value.trim();
     const captchaResponse = grecaptcha.getResponse()
 
     function validate_email(email) {
