@@ -224,7 +224,9 @@ submitBtn.addEventListener('click', (e) => {
             text: 'Por favor, complete todos los campos del formulario.',
             icon: 'error',
             confirmButtonColor: '#22282f'
-        });
+        })
+        document.getElementById('form').reset()
+        grecaptcha.reset()
     } else {
         // Crear el FormData
         const formData = new FormData();
