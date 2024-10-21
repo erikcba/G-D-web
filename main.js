@@ -234,7 +234,9 @@ submitBtn.addEventListener('click', (e) => {
         formData.append('empresa', empresaValue);
         formData.append('email', emailValue);
         formData.append('telefono', telefonoValue);
-        formData.append('texto', textoValue);
+        if (textoValue !== '') {
+            formData.append('texto', textoValue);
+        }
 
         fetch('https://gydconsultoras.com/sendmail.php', {
             method: 'POST',
@@ -258,6 +260,8 @@ submitBtn.addEventListener('click', (e) => {
                         icon: 'error',
                         confirmButtonColor: '#22282f',
                     });
+                    document.getElementById('form').reset()
+                    grecaptcha.reset()
                 }
             })
             .catch((error) => {
